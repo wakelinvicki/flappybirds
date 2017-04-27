@@ -9,7 +9,7 @@ var mainState = {
         game.load.image('pipe', 'assets/pipe.png');
     },
     
-    create: function () {
+    create: function() {
         //This function is called after the preload function
         //Here we set up the game, display sprites, etc.
         
@@ -46,7 +46,7 @@ var mainState = {
         //It contains the game's logic
         
         //Call the 'restartGame' function
-        if (this.bird.y <0 || this.bird.y > 490)
+        if (this.bird.y < 0 || this.bird.y > 490)
             this.restartGame();
     },
     
