@@ -87,8 +87,8 @@ var mainState = {
         var hole = Math.floor(Math.random() * 5) + 1;
         
         //Add 6 pipes
-        for (var i = 0; 1 < 8; i++)
-            if (i != hole && 1 != hole +1)
+        for (var i = 0; i < 8; i++)
+            if (i != hole && i != hole +1)
                 this.addOnePipe(400, i * 60 + 10);
     },
 };
