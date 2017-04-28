@@ -62,6 +62,9 @@ this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
     this.score = 0;
     this.labelScore = game.add.text(20, 20, "0", 
         { font: "30px Arial", fill: "#ffffff" });
+    
+//New anchor position
+this.bird.anchor.setTo(-0.2, 0.5);
 
 },
 
@@ -83,7 +86,7 @@ this.restartGame();
 
 //calls the restartGame function each time the bird dies
 game.physics.arcade.overlap(
-  this.bird, this.pipes, this.restartGame, null, this);
+  this.bird, this.pipes, this.hitPipe, null, this);
     
 //Slowly rotate the bird downward, up to a certain point
 if (this.bird.angle < 20)
@@ -94,6 +97,10 @@ if (this.bird.angle < 20)
 //Make the bird jump
 
 jump: function() {
+    
+//Stops the bird being controlled when it's dead
+if (this.bird.alive == false)
+    return;
 
 //Add a vertial velocity to the bird
 
@@ -172,6 +179,26 @@ this.addOnePipe(400, i * 60 + 10);
 this.score += 1;
 this.labelScore.text = this.score;
 
+},
+
+hitPipe: function() {
+  
+//If the bird has already hit a pipe, do nothing    
+//It means the bird is already falling off the screen
+if (this.bird.alive == false)
+    return;
+    
+//Set the alive property of the bird to false
+this.bird.alive = false;
+    
+//Prevent new pipes from appearing 
+game.time.events.remove(this.timer);
+    
+//Go through all the pipes, and stop their movement
+this.pipes.forEach(function(p){
+    p.body.velocity.x = 0;
+}, this);
+    
 },
 
 };
