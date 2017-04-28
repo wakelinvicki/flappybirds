@@ -169,8 +169,8 @@ if (i != hole && i != hole + 1)
 this.addOnePipe(400, i * 60 + 10);
     
 //Increases score as new pipes are created
-this.score +=1;
-this.LabelScore.text = this.score;
+this.score += 1;
+this.labelScore.text = this.score;
 
 },
 
