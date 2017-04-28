@@ -12,7 +12,6 @@ preload: function() {
 
 game.load.image('bird', 'assets/bird.png');
 game.load.image('pipe', 'assets/pipe.png'); 
-
 },
 
 create: function() {
