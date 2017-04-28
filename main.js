@@ -81,6 +81,10 @@ if (this.bird.y < 0 || this.bird.y > 490)
 
 this.restartGame();
 
+//calls the restartGame function each time the bird dies
+game.physics.arcade.overlap(
+  this.bird, this.pipes, this.restartGame, null, this);
+
 },
     
 //Make the bird jump
@@ -150,6 +154,10 @@ for (var i = 0; i < 8; i++)
 if (i != hole && i != hole + 1)
 
 this.addOnePipe(400, i * 60 + 10);
+    
+//Increases score as new pipes are created
+this.score +=1;
+this.LabelScore.text = this.score;
 
 },
 
