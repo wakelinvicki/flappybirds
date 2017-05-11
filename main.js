@@ -10,8 +10,8 @@ preload: function() {
     
 //Load the bird sprite
 
-game.load.image('bird', 'assets/bird.png');
-game.load.image('pipe', 'assets/pipe.png'); 
+game.load.image('bird', 'assets/therock.png');
+game.load.image('pipe', 'assets/post.png'); 
 },
 
 create: function() {
