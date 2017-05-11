@@ -11,7 +11,7 @@ preload: function() {
 //Load the bird sprite
 
 game.load.image('bird', 'assets/therock.png');
-game.load.image('pipe', 'assets/post.png'); 
+game.load.image('pipe', 'assets/post2.png'); 
 },
 
 create: function() {
